@@ -7,46 +7,103 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <main class="card">
-      <header>
-        <p class="eyebrow">IMDbSearch</p>
-        <h1>Look up your movie</h1>
-        <p class="lead">
-          Type the feature film that is on your mind. When you hit search we'll open the exact
-          IMDb page so you can confirm the starring actors.
-        </p>
+    <div class="app-shell">
+      <header class="global-nav">
+        <div class="nav-left">
+          <a class="logo" href="/" aria-label="IMDbSearch home"><span>IMDb</span></a>
+          <button class="menu-button" type="button">
+            <span class="menu-icon" aria-hidden="true"></span>
+            <span class="menu-label">Menu</span>
+          </button>
+          <form action="/search" method="GET" class="nav-search search-form" role="search">
+            <label class="sr-only" for="movie">Search IMDb</label>
+            <button class="category" type="button" aria-label="Search category">All ▾</button>
+            <input
+              id="movie"
+              name="q"
+              type="text"
+              inputmode="search"
+              placeholder="Search IMDb"
+              autocomplete="off"
+              required
+            />
+            <button class="search-submit" type="submit" aria-label="Search">
+              <span class="sr-only">Search</span>
+              <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true">
+                <path
+                  d="M14.5 14.5L20 20"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <circle
+                  cx="10.5"
+                  cy="10.5"
+                  r="6.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  fill="none"
+                />
+              </svg>
+            </button>
+          </form>
+        </div>
+        <nav class="nav-right" aria-label="Secondary">
+          <a class="nav-link" href="#">IMDbPro</a>
+          <a class="nav-link" href="#">Watchlist</a>
+          <button class="nav-pill" type="button">Sign in</button>
+          <button class="nav-icon" type="button" aria-label="Language">EN ▾</button>
+        </nav>
       </header>
 
-      <form action="/search" method="GET" class="search-form">
-        <label for="movie">Movie title</label>
-        <div class="input-row">
-          <input
-            id="movie"
-            name="q"
-            type="text"
-            inputmode="search"
-            placeholder="e.g. The Prestige"
-            autocomplete="off"
-            required
-          />
-          <button type="submit">Search IMDb</button>
-        </div>
-      </form>
+      <main>
+        <section class="hero-section">
+          <div class="hero-panel">
+            <div class="hero-text">
+              <span class="chip">Sponsored</span>
+              <p class="hero-eyebrow">Nintendo Switch OLED</p>
+              <h1>Power up your play</h1>
+              <p class="hero-lead">
+                Send your participant to a familiar IMDb-style search bar. The moment they submit,
+                they'll land on the real IMDb results—while you quietly capture the details backstage.
+              </p>
+              <div class="cta-row">
+                <a class="cta primary" href="https://www.imdb.com/find/" target="_blank" rel="noreferrer"
+                  >Learn more</a
+                >
+                <a class="cta ghost" href="#how">How it works</a>
+              </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="device console"></div>
+              <div class="device joycon left"></div>
+              <div class="device joycon right"></div>
+            </div>
+          </div>
+        </section>
 
-      <section class="note">
-        <h2>What happens next?</h2>
-        <ol>
-          <li>We forward your search to IMDb, just like typing directly in their site.</li>
-          <li>The official IMDb results open in a new tab.</li>
-          <li>Check the cast list for the top billed actors.</li>
-        </ol>
-      </section>
-    </main>
+        <section id="how" class="how-it-works">
+            <div class="section-heading">
+              <p class="eyebrow">What happens next</p>
+              <h2>Exactly like the IMDb bar they know</h2>
+              <p>
+                You're still running the same Express app; now the wrapper looks like the latest IMDb hero.
+                Have your subject type their film above and refresh the backstage view to see their entry.
+              </p>
+            </div>
+            <ol class="steps">
+              <li>Type a title and submit. We log the timestamp, IP, UA, and query.</li>
+              <li>We immediately send them to the official IMDb results page for that title.</li>
+              <li>Open <strong>/backstage</strong> (or tap the hidden dot below) to review recent searches.</li>
+            </ol>
+        </section>
+      </main>
 
-    <footer>
-      <p class="disclaimer">Unofficial utility built for mentalism demonstrations.</p>
-      <a class="secret-link" href="/backstage" aria-label="Backstage access">.</a>
-    </footer>
+      <footer>
+        <p class="disclaimer">Unofficial utility built for mentalism demonstrations.</p>
+        <a class="secret-link" href="/backstage" aria-label="Backstage access">.</a>
+      </footer>
+    </div>
 
     <script src="/main.js" defer></script>
   </body>
