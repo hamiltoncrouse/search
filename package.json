@@ -1,0 +1,34 @@
+{
+  "name": "imdbsearch-mindtrick",
+  "version": "0.1.0",
+  "description": "Deceptively simple IMDb search front that logs recent queries for a mentalism trick.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "express",
+    "imdb",
+    "mentalism",
+    "render"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamiltoncrouse/search.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hamiltoncrouse/search/issues"
+  },
+  "homepage": "https://github.com/hamiltoncrouse/search#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}

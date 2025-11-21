@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMDb Search</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header>
+        <p class="eyebrow">IMDbSearch</p>
+        <h1>Look up your movie</h1>
+        <p class="lead">
+          Type the feature film that is on your mind. When you hit search we'll open the exact
+          IMDb page so you can confirm the starring actors.
+        </p>
+      </header>
+
+      <form action="/search" method="GET" class="search-form">
+        <label for="movie">Movie title</label>
+        <div class="input-row">
+          <input
+            id="movie"
+            name="q"
+            type="text"
+            inputmode="search"
+            placeholder="e.g. The Prestige"
+            autocomplete="off"
+            required
+          />
+          <button type="submit">Search IMDb</button>
+        </div>
+      </form>
+
+      <section class="note">
+        <h2>What happens next?</h2>
+        <ol>
+          <li>We forward your search to IMDb, just like typing directly in their site.</li>
+          <li>The official IMDb results open in a new tab.</li>
+          <li>Check the cast list for the top billed actors.</li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p class="disclaimer">Unofficial utility built for mentalism demonstrations.</p>
+      <a class="secret-link" href="/backstage" aria-label="Backstage access">.</a>
+    </footer>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>
